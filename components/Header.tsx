@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,20 +19,23 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-[#0c2625]/95 backdrop-blur-md border-b border-[#d4af37]/20"
+          ? "bg-[#111111]/65 backdrop-blur-md border-b border-[#d4af37]/20"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#d4af37] to-[#b8941f] rounded-lg flex items-center justify-center">
-              <div className="w-6 h-6 bg-[#0c2625] rounded transform rotate-45"></div>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              className="w-14 h-full text-black mt-1"
+              height={68}
+              width={68}
+            />
             <div>
               <h1 className="text-xl font-bold text-white">Estate Advisor</h1>
-              <p className="text-xs text-[#d4af37] -mt-1">Karachi Properties</p>
             </div>
           </div>
 
@@ -41,13 +45,13 @@ const Header = () => {
               href="#properties"
               className="text-white/80 hover:text-[#d4af37] transition-colors"
             >
-              Properties
+              Home
             </a>
             <a
-              href="#services"
+              href="#properties"
               className="text-white/80 hover:text-[#d4af37] transition-colors"
             >
-              Services
+              Properties
             </a>
             <a
               href="#about"
@@ -69,11 +73,6 @@ const Header = () => {
               <Phone size={16} />
               <span className="text-sm">+92 321 123 4567</span>
             </div>
-            <div className="w-px h-6 bg-white/20"></div>
-            <div className="flex items-center space-x-2 text-[#d4af37]">
-              <MapPin size={16} />
-              <span className="text-sm">Karachi</span>
-            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,13 +92,13 @@ const Header = () => {
                 href="#properties"
                 className="text-white/80 hover:text-[#d4af37] transition-colors"
               >
-                Properties
+                Home
               </a>
               <a
                 href="#services"
                 className="text-white/80 hover:text-[#d4af37] transition-colors"
               >
-                Services
+                Properties
               </a>
               <a
                 href="#about"

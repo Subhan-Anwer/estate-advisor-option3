@@ -1,35 +1,40 @@
 "use client";
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Clock, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import Image from "next/image";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Handle form submission here
   };
 
   return (
-    <section className="py-20 bg-[#0c2625] relative overflow-hidden">
+    <section className="py-20 bg-[#161616] border-t border-gray-400/70 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      {/* <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/20 via-transparent to-[#d4af37]/20"></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -38,7 +43,8 @@ const ContactSection = () => {
             Get in <span className="text-[#d4af37]">Touch</span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Ready to start your property journey? Our expert advisors are here to help you make informed decisions. Reach out to us today.
+            Ready to start your property journey? Our expert advisors are here
+            to help you make informed decisions. Reach out to us today.
           </p>
         </div>
 
@@ -49,12 +55,12 @@ const ContactSection = () => {
             <div className="space-y-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-[#d4af37]/30 transition-all duration-300">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#d4af37] to-[#b8941f] rounded-xl flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-[#0c2625]" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#d61620] to-[#a00911] rounded-xl flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Call Us</h3>
-                    <p className="text-[#d4af37]">+92 321 123 4567</p>
+                    <p className="text-[#d4af37]">+92 323 3385541</p>
                     <p className="text-white/60 text-sm">Mon-Sat 9AM-8PM</p>
                   </div>
                 </div>
@@ -62,12 +68,18 @@ const ContactSection = () => {
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-[#d4af37]/30 transition-all duration-300">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-xl flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#5ad265] to-[#1f9c33] rounded-xl flex items-center justify-center">
+                    <Image
+                      src="/Whatsapp.png"
+                      alt="WhatsApp Icon"
+                      width={28}
+                      height={28}
+                      className="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">WhatsApp</h3>
-                    <p className="text-[#25D366]">+92 321 123 4567</p>
+                    <p className="text-[#25D366]">+92 323 3385541</p>
                     <p className="text-white/60 text-sm">Quick responses</p>
                   </div>
                 </div>
@@ -80,7 +92,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Email</h3>
-                    <p className="text-[#3b82f6]">info@estateadvisor.pk</p>
+                    <p className="text-[#3b82f6]">sohailadvisor90@gmail.com</p>
                     <p className="text-white/60 text-sm">24-48 hour response</p>
                   </div>
                 </div>
@@ -93,8 +105,10 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Visit Us</h3>
-                    <p className="text-[#f59e0b]">DHA Phase 6</p>
-                    <p className="text-white/60 text-sm">Karachi, Pakistan</p>
+                    <p className="text-[#f59e0b]">Shahbaz Comm lane 4</p>
+                    <p className="text-white/60 text-sm">
+                      DHA Phase VI Karachi
+                    </p>
                   </div>
                 </div>
               </div>
@@ -221,12 +235,6 @@ const ContactSection = () => {
                   <span>Send Message</span>
                 </button>
               </form>
-
-              <div className="mt-6 p-4 bg-[#d4af37]/10 border border-[#d4af37]/20 rounded-lg">
-                <p className="text-[#d4af37] text-sm text-center">
-                  ⚡ Get a response within 2 hours during business hours
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -237,16 +245,16 @@ const ContactSection = () => {
             <h3 className="text-2xl font-bold text-white mb-6 text-center">
               Visit Our Office
             </h3>
-            <div className="bg-white/10 rounded-xl h-64 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-[#d4af37] mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-white mb-2">
-                  Estate Advisor Office
-                </h4>
-                <p className="text-white/60">
-                  Interactive map with custom markers would be displayed here
-                </p>
-              </div>
+            <div className="bg-red-300 rounded-xl h-100 flex items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.649783424411!2d67.0608231!3d24.807442999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d822b3770f5%3A0x113dad0e9ed8c62a!2sEstate%20Advisor!5e0!3m2!1sen!2s!4v1754113969412!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import FeaturedProperties from "../../components/FeaturedPropert";
 import TestimonialsSection from "../../components/Testimonials";
 import ContactSection from "../../components/ContactSection";
 import Footer from "../../components/Footer";
+import WhatsAppButton from "../../components/WhatsappButton";
 
 export default function Home() {
   return (
@@ -13,10 +14,10 @@ export default function Home() {
       <Hero />
       <StatsSection />
       <FeaturedProperties />
-      {/* <ServicesSection /> */}
       <TestimonialsSection />
       <ContactSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

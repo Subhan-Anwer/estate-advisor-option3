@@ -7,31 +7,30 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Youtube,
-  ArrowUp,
+  Youtube
 } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
-    <footer className="bg-gradient-to-b from-[#0c2625] to-[#051413] relative">
+    <footer className="bg-gradient-to-b from-[#111111] to-[#000000] relative">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#d4af37] to-[#b8941f] rounded-lg flex items-center justify-center">
-                <div className="w-6 h-6 bg-[#0c2625] rounded transform rotate-45"></div>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                className="w-18 h-auto text-black"
+                height={58}
+                width={58}
+                quality={100}
+              />
               <div>
                 <h3 className="text-xl font-bold text-white">Estate Advisor</h3>
-                <p className="text-xs text-[#d4af37] -mt-1">
-                  Karachi Properties
-                </p>
               </div>
             </div>
             <p className="text-white/70 mb-6 leading-relaxed">
@@ -74,18 +73,18 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#properties"
+                  href="#contact"
                   className="text-white/70 hover:text-[#d4af37] transition-colors"
                 >
-                  Properties
+                  Home
                 </a>
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="#properties"
                   className="text-white/70 hover:text-[#d4af37] transition-colors"
                 >
-                  Services
+                  Properties
                 </a>
               </li>
               <li>
@@ -102,22 +101,6 @@ const Footer = () => {
                   className="text-white/70 hover:text-[#d4af37] transition-colors"
                 >
                   Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#d4af37] transition-colors"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#d4af37] transition-colors"
-                >
-                  Careers
                 </a>
               </li>
             </ul>
@@ -158,15 +141,7 @@ const Footer = () => {
                   href="#"
                   className="text-white/70 hover:text-[#d4af37] transition-colors"
                 >
-                  Property Management
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-[#d4af37] transition-colors"
-                >
-                  Legal Services
+                  Property Documentation
                 </a>
               </li>
               <li>
@@ -189,32 +164,18 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-[#d4af37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white/70">Office # 123, DHA Phase 6</p>
-                  <p className="text-white/70">Karachi, Pakistan</p>
+                  <p className="text-white/70">
+                    Shahbaz Comm lane 4, DHA Phase VI, Karachi
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
-                <p className="text-white/70">+92 321 123 4567</p>
+                <p className="text-white/70">+92 323 3385541</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
-                <p className="text-white/70">info@estateadvisor.pk</p>
-              </div>
-            </div>
-
-            {/* Newsletter */}
-            <div className="mt-6">
-              <h5 className="text-white font-medium mb-3">Newsletter</h5>
-              <div className="flex space-x-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 text-sm focus:outline-none focus:border-[#d4af37]"
-                />
-                <button className="bg-[#d4af37] text-[#0c2625] px-4 py-2 rounded-lg hover:bg-[#b8941f] transition-colors">
-                  Subscribe
-                </button>
+                <p className="text-white/70">sohailadvisor90@gmail.com</p>
               </div>
             </div>
           </div>
@@ -231,14 +192,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-[#d4af37] text-[#0c2625] rounded-full flex items-center justify-center hover:bg-[#b8941f] transition-all duration-300 transform hover:scale-110 shadow-lg z-50"
-      >
-        <ArrowUp size={20} />
-      </button>
     </footer>
   );
 };

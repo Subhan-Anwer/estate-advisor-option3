@@ -15,7 +15,7 @@ const StatsSection = () => {
   const targetValues = {
     properties: 2500,
     clients: 15000,
-    experience: 12,
+    experience: 30,
     partners: 150,
   };
 
@@ -69,40 +69,40 @@ const StatsSection = () => {
       value: counts.properties,
       suffix: "+",
       label: "Properties Sold",
-      color: "from-[#d4af37] to-[#f4d03f]",
+      color: "from-[#fcd01c] to-[#9e8021]",
     },
     {
       icon: Users,
       value: counts.clients,
       suffix: "+",
       label: "Happy Clients",
-      color: "from-[#4ade80] to-[#22c55e]",
+      color: "from-[#5ad265] to-[#1f9c33]",
     },
     {
       icon: Calendar,
       value: counts.experience,
       suffix: "",
       label: "Years Experience",
-      color: "from-[#60a5fa] to-[#3b82f6]",
+      color: "from-[#4095ff] to-[#1c57b8]",
     },
     {
       icon: Award,
       value: counts.partners,
       suffix: "+",
       label: "Partner Developers",
-      color: "from-[#f472b6] to-[#ec4899]",
+      color: "from-[#fa5caf] to-[#ed3992]",
     },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-[#0c2625] relative overflow-hidden"
+      className="py-20 bg-[#151616]  relative overflow-hidden"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      {/* <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#d4af37]/20 to-transparent transform -skew-y-6"></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -119,11 +119,11 @@ const StatsSection = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative"
+              className="group relative "
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Card */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:border-[#d4af37]/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10">
+              <div className="glass bg-black border border-white/10 rounded-2xl p-8 text-center hover:border-[#d4af37]/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10">
                 {/* Icon */}
                 <div
                   className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${stat.color} p-4 transform group-hover:rotate-6 transition-transform duration-300`}
@@ -132,11 +132,11 @@ const StatsSection = () => {
                 </div>
 
                 {/* Number */}
-                <div className="mb-4">
-                  <span className="text-4xl lg:text-5xl font-bold text-white">
+                <div className="mb-4 text-white">
+                  <span className="text-4xl lg:text-5xl font-bold">
                     {stat.value.toLocaleString()}
                   </span>
-                  <span className="text-3xl lg:text-4xl font-bold text-[#d4af37]">
+                  <span className="text-3xl lg:text-4xl font-bold">
                     {stat.suffix}
                   </span>
                 </div>

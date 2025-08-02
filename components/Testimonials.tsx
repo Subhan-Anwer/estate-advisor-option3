@@ -1,22 +1,19 @@
 "use client";
-import React, { useState } from "react";
-import { Star, Quote, Play, X } from "lucide-react";
+import React from "react";
+import { Star, Quote } from "lucide-react";
 
 const TestimonialsSection = () => {
-  const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
 
   const testimonials = [
     {
       id: 1,
-      name: "Ahmed Hassan",
+      name: "Noman Sheikh",
       role: "Business Owner",
       location: "DHA Phase 6",
       rating: 5,
       text: "Estate Advisor helped me find the perfect commercial space for my business. Their market knowledge and negotiation skills saved me both time and money. Highly recommended!",
       image:
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
-      videoThumbnail:
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+        "/noman.jpg",
       property: "Commercial Plaza in Gulshan",
     },
     {
@@ -27,8 +24,6 @@ const TestimonialsSection = () => {
       rating: 5,
       text: "As a first-time buyer, I was overwhelmed by the process. The team at Estate Advisor guided me through every step and helped me secure my dream apartment in Clifton.",
       image:
-        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
-      videoThumbnail:
         "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
       property: "Sea View Apartment",
     },
@@ -41,8 +36,6 @@ const TestimonialsSection = () => {
       text: "I've been investing in Karachi real estate for 10 years, but Estate Advisor's insights have taken my portfolio to the next level. Their market analysis is unparalleled.",
       image:
         "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg",
-      videoThumbnail:
-        "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg",
       property: "Investment Portfolio",
     },
     {
@@ -54,27 +47,17 @@ const TestimonialsSection = () => {
       text: "Moving to Karachi from abroad was daunting, but Estate Advisor made finding a home effortless. Their professionalism and local expertise are exceptional.",
       image:
         "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg",
-      videoThumbnail:
-        "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg",
       property: "Luxury Villa",
     },
   ];
 
-  const openVideoModal = (testimonialId: number) => {
-    setSelectedVideo(testimonialId);
-  };
-
-  const closeVideoModal = () => {
-    setSelectedVideo(null);
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0f2d2b] to-[#0c2625] relative overflow-hidden">
+    <section className="py-20 bg-[#0f0f0f] border-t border-gray-600 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 opacity-10">
+      {/* <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#d4af37] rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d4af37] rounded-full blur-3xl"></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -93,7 +76,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#d4af37]/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10"
+              className="group relative glass border border-white/10 rounded-2xl p-8 hover:border-[#d4af37]/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Quote Icon */}
@@ -125,13 +108,6 @@ const TestimonialsSection = () => {
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover border-2 border-[#d4af37]/30"
                     />
-                    {/* Video Play Button Overlay */}
-                    <button
-                      onClick={() => openVideoModal(testimonial.id)}
-                      className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/70"
-                    >
-                      <Play className="w-4 h-4 text-[#d4af37] ml-0.5" />
-                    </button>
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">
@@ -159,37 +135,7 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Video Modal */}
-        {selectedVideo && (
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="relative bg-[#0c2625] border border-[#d4af37]/30 rounded-2xl p-8 max-w-2xl w-full">
-              <button
-                onClick={closeVideoModal}
-                className="absolute top-4 right-4 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-red-500 transition-colors"
-              >
-                <X size={20} />
-              </button>
-
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Video Testimonial
-                </h3>
-                <div className="bg-white/10 rounded-xl h-64 flex items-center justify-center mb-4">
-                  <div className="text-center">
-                    <Play className="w-16 h-16 text-[#d4af37] mx-auto mb-4" />
-                    <p className="text-white/60">
-                      Video testimonial would play here
-                    </p>
-                  </div>
-                </div>
-                <p className="text-white/70">
-                  {testimonials.find((t) => t.id === selectedVideo)?.name}'s
-                  experience with Estate Advisor
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+        
 
         {/* Trust Indicators */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 border-t border-white/10">

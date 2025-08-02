@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Search, MapPin, Home, DollarSign, Calendar, Play } from "lucide-react";
+import { Search, MapPin, Home, DollarSign } from "lucide-react";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -51,14 +51,14 @@ const Hero = () => {
               alt={slide.title}
               className="w-full h-full object-cover scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0c2625]/90 via-[#0c2625]/70 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/90 via-[#111111]/70 to-transparent"></div>
           </div>
         ))}
       </div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+        <div className="max-w-7xl mt-12 mx-auto px-6 w-full">
           <div className="max-w-3xl">
             {/* Main Heading */}
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
@@ -70,14 +70,12 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
-              Discover premium real estate opportunities in Karachi with
-              Pakistan's most trusted property consultancy. We turn your
-              property dreams into reality.
+              Plots • Apartments • Bungalows • Commercial Spaces
             </p>
 
             {/* Floating Search Bar */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-black">
                 <div className="relative">
                   <MapPin
                     className="absolute left-3 top-3 text-[#d4af37]"
@@ -90,11 +88,19 @@ const Hero = () => {
                     }
                     className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-[#d4af37]"
                   >
-                    <option value="">Select Location</option>
-                    <option value="clifton">Clifton</option>
-                    <option value="dha">DHA</option>
-                    <option value="gulshan">Gulshan-e-Iqbal</option>
-                    <option value="north-nazimabad">North Nazimabad</option>
+                    <option value="">Location</option>
+                    <option className="text-black" value="clifton">
+                      Clifton
+                    </option>
+                    <option className="text-black" value="dha">
+                      DHA
+                    </option>
+                    <option className="text-black" value="gulshan">
+                      Gulshan-e-Iqbal
+                    </option>
+                    <option className="text-black" value="north-nazimabad">
+                      Bahria Town
+                    </option>
                   </select>
                 </div>
 
@@ -110,11 +116,11 @@ const Hero = () => {
                     }
                     className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-[#d4af37]"
                   >
-                    <option value="">Property Type</option>
-                    <option value="house">House</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="plot">Plot</option>
+                    <option value="">Property</option>
+                    <option className="text-black" value="house">House</option>
+                    <option className="text-black" value="apartment">Apartment</option>
+                    <option className="text-black" value="commercial">Commercial</option>
+                    <option className="text-black" value="plot">Plot</option>
                   </select>
                 </div>
 
@@ -130,10 +136,13 @@ const Hero = () => {
                     }
                     className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-[#d4af37]"
                   >
-                    <option value="">Budget Range</option>
-                    <option value="0-50">0-50 Lakh</option>
-                    <option value="50-100">50L-1 Crore</option>
-                    <option value="100+">1+ Crore</option>
+                    <option value="">Size</option>
+                    <option className="text-black" value="400-500">400-500 Yards</option>
+                    <option className="text-black" value="500-600">500-600 Yards</option>
+                    <option className="text-black" value="600-700">600-700 Yards</option>
+                    <option className="text-black" value="700-800">700-800 Yards</option>
+                    <option className="text-black" value="800-900">800-900 Yards</option>
+                    <option className="text-black" value="1000+">1000+ Yards</option>
                   </select>
                 </div>
 
@@ -142,20 +151,6 @@ const Hero = () => {
                   <span>Search</span>
                 </button>
               </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-[#d4af37] text-[#0c2625] font-semibold px-8 py-4 rounded-lg hover:bg-[#b8941f] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#d4af37]/25">
-                Speak to an Advisor
-              </button>
-
-              <button className="group flex items-center space-x-3 text-white border border-white/30 px-8 py-4 rounded-lg hover:border-[#d4af37] transition-all duration-300">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#d4af37]/20 transition-colors">
-                  <Play size={16} className="text-[#d4af37] ml-1" />
-                </div>
-                <span>Watch Our Story</span>
-              </button>
             </div>
           </div>
         </div>
